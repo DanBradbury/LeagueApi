@@ -12,7 +12,7 @@ describe LeagueApi::Summoner do
 		@summoner.find_by_name('Pablô', "euw")["id"].should == 31821331
 		@summoner.find_by_name('Sayó', "eune")["id"].should == 21749000
 		@summoner.find_by_name('Friend', "tr")["id"].should == 870193
-		@summoner.find_by_name('Sara', "oce")["id"].should == 506399
+		@summoner.find_by_name('Sara', "oce")["id"].should == 444198
 		@summoner.find_by_name('Chingon', "las")["id"].should == 553880
 		@summoner.find_by_name('ChingoN', "lan")["id"].should == 199926
 		sleep 5
