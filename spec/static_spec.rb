@@ -4,16 +4,16 @@ describe LeagueApi::Static do
 
 	before :all do
 		@static = LeagueApi::Static
-    REALM_VERSION = "4.18.1"
-    GAME_VERSION = "4.18.1"
+    REALM_VERSION = "4.21.5"
+    GAME_VERSION = "4.21.5"
   end
 
 	it "should get a recent champion list" do
-		@static.get_champion_list.first.should == ["Aatrox", {"id"=>266, "key"=>"Aatrox", "name"=>"Aatrox", "title"=>"the Darkin Blade"}]
+		@static.get_champion_list.first.should == ["Thresh", {"id"=>412, "key"=>"Thresh", "name"=>"Thresh", "title"=>"the Chain Warden"}]
 	end
 
 	it "should return an inverted champion list with ids as the keys" do
-		@static.get_inverted_champion_list.first.should == [266, "Aatrox"]
+		@static.get_inverted_champion_list.first.should == [412, "Thresh"]
 	end
 
 	it "should get champion data from name only" do
@@ -29,7 +29,7 @@ describe LeagueApi::Static do
 	end
 
 	it "should get a recent item list" do
-		@static.get_item_list.first.should == ["2009", {"id"=>2009, "name"=>"Total Biscuit of Rejuvenation", "description"=>"<consumable>Click to Consume:</consumable> Restores 80 Health and 50 Mana over 10 seconds."}]
+		@static.get_item_list.first.should == ["3725", {"id"=>3725, "name"=>"Enchantment: Juggernaut", "group"=>"JungleItems", "description"=>"<stats>+500 Health<br>+10% Cooldown Reduction</stats><br><br><unique>UNIQUE Passive - Tenacity:</unique> Reduces the duration of stuns, slows, taunts, fears, silences, blinds, polymorphs, and immobilizes by 35%.<br><br><i>(Unique Passives with the same name don't stack.)</i>"}]
 	end
 
 	it "should get an item by id" do
@@ -63,7 +63,7 @@ describe LeagueApi::Static do
 	end
 
 	it "should get current summoner spells" do
-		@static.get_summoner_spells.first.should == ["SummonerBoost", {"name"=>"Cleanse", "description"=> "Removes all disables and summoner spell debuffs affecting your champion and lowers the duration of incoming disables by 65% for 3 seconds.", "summonerLevel"=>2, "id"=>1, "key"=>"SummonerBoost"}]
+		@static.get_summoner_spells.first.should == ["SummonerBoost", {"name"=>"Cleanse", "description"=> "Removes all disables and summoner spell debuffs affecting your champion and lowers the duration of incoming disables by 65% for 3 seconds.", "summonerLevel"=>6, "id"=>1, "key"=>"SummonerBoost"}]
 	end
 
 	it "should get summoner spell by id" do

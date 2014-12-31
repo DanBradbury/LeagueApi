@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "league_api"
-  spec.version       = "0.7.0"
+  spec.version       = "0.7.1"
   spec.authors       = ["DanBradbury"]
   spec.email         = ["dan.luckydaisy@gmail.com"]
   spec.summary       = %q{Requests to Riot Developer API with Additional Utilities}

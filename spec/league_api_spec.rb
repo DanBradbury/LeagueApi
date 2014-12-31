@@ -6,11 +6,11 @@ describe LeagueApi do
 	end
 
 	it "should return a list of Champions" do
-		LeagueApi.get_champion_names.first.should == "Aatrox"
+		LeagueApi.get_champion_names.first.should == "Thresh"
 	end
 
 	it "should return a list of Items" do
-		LeagueApi.get_item_names.first.should == "Total Biscuit of Rejuvenation"
+		LeagueApi.get_item_names.first.should == "Enchantment: Juggernaut"
 	end
 
 	it "should fetch a summoners id from the summoner name" do
