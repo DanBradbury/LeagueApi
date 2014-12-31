@@ -3,8 +3,9 @@
 [![Build Status](https://travis-ci.org/DanBradbury/LeagueApi.svg?branch=master)](https://travis-ci.org/DanBradbury/LeagueApi)  [![Code Climate](https://codeclimate.com/github/DanBradbury/LeagueApi.png)](https://codeclimate.com/github/DanBradbury/LeagueApi) [![Gem Version](https://badge.fury.io/rb/league_api.svg)](http://badge.fury.io/rb/league_api) [![Inline docs](http://inch-ci.org/github/DanBradbury/LeagueApi.png?branch=master)](http://inch-ci.org/github/DanBradbury/LeagueApi)
 
 Using Ruby + want to utiilze Riot's Developer APIs? Then you are in the right place.
-### Being Battle Testing @
-[DoTheyWard.com](www.dotheyward.com)
+####Battle Testing On
+
+> [DoTheyWard.com](www.dotheyward.com)
 
 **If you are using the gem on a site let me know and we can get ya added to the list**
 
