@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = "0.7.2"
   spec.authors       = ["DanBradbury"]
   spec.email         = ["dan.luckydaisy@gmail.com"]
-  spec.summary       = %q{Requests to Riot Developer API with Additional Utilities}
-  spec.description   = %q{Gem to access Riot Developer APIs. Mapping is returned as a <Hash> for convenience. Additional methods have been / will be continuously added in order to support ease of use across a variety of use cases. The restriction is only to properly use the rate limit and submit a PR with tests.}
+  spec.summary       = %q{Mapping of Riot Developer API with  additional helper methods}
+  spec.description   = %q{Gem to access Riot Developer APIs.}
   spec.homepage      = "http://danbradbury.github.io/LeagueApi/"
   spec.license       = "MIT"
 
