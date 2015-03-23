@@ -26,11 +26,13 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 
 
 * game-v1.3
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent | Get recent games by summoner ID. |
 
 * league-v2.5
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v2.5/league/by-summoner/{summonerIds} | Get leagues mapped by summoner ID for a given list of summoner IDs. |
@@ -40,6 +42,7 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 | /api/lol/{region}/v2.5/league/challenger | Get challenger tier leagues. |
 
 * lol-static-data-v1.2
+
 |             |             |
 |-------------|-------------|
 | /api/lol/static-data/{region}/v1.2/champion | Retrieves champion list. |
@@ -59,12 +62,14 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 | /api/lol/static-data/{region}/v1.2/versions | Retrieve version data. |
 
 * stats-v1.3
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v1.3/stats/by-summoner/{summonerId}/ranked | Get ranked stats by summoner ID. |
 | /api/lol/{region}/v1.3/stats/by-summoner/{summonerId}/summary | Get player stats summaries by summoner ID. |
 
 * summoner-v1.4
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v1.4/summoner/by-name/{summonerNames} | Get summoner objects mapped by standardized summoner name for a given list of summoner names. |
@@ -75,6 +80,7 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 
 
 * team-v2.4
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v2.4/team/by-summoner/{summonerIds} | Get teams mapped by summoner ID for a given list of summoner IDs. |
@@ -84,33 +90,38 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 > Will be updated until all APIs are fully supported
 
 * current-game-v1.0
+
 |             |             |
 |-------------|-------------|
 | /observer-mode/rest/consumer/getSpectatorGameInfo/{platformId}/{summonerId} | Get current game information for the given summoner ID |
 
 * feature-games-v1.0
+
 |             |             |
 |-------------|-------------|
 | /observer-mode/rest/featured | Get list of featured games. |
 
 * lol-status-v1.0
+
 |             |             |
 |-------------|-------------|
 | /shards | Get shard list. |
 | /shards/{region} | Get shard status. Returns the data available on the status.leagueoflegends.com website for the given region. |
 
 * match-v2.2
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v2.2/match/{matchId} | Retrieve match by match ID. |
 
 * matchhistory-v2.2
+
 |             |             |
 |-------------|-------------|
 | /api/lol/{region}/v2.2/matchhistory/{summonerId} | Retrieve match history by summoner ID. |
 
 
-#### First Steps
+#### Getting Started
     LeagueApi.available_requests # I prefer to use pry for this because of the hash pretty hash formatting
     =>
       LeagueApi::Game=>["recent_games(summoner_id)"],
