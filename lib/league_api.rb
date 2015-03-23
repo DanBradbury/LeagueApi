@@ -24,18 +24,7 @@ module LeagueApi
 
     url = base + modifier
 
-    if params
-
-      params.each do |p|
-        url << '?'+p[0]+'='+p[1]
-      end
-      url += '&api_key=' + @api_key
-
-    else
-
-      url += '?api_key=' + @api_key
-
-    end
+    url << add_query_string(params)
 
     uri = URI.parse(url)
     JSON.parse(uri.read)
@@ -62,38 +51,17 @@ module LeagueApi
   end
 
   def change_base(url, region)
-    case region
-    when "euw"
-      url.gsub("na.api.pvp.net","euw.api.pvp.net").gsub("na","euw")
-    when "br"
-      url.gsub("na.api.pvp.net","br.api.pvp.net").gsub("na","br")
-    when "eune"
-      url.gsub("na.api.pvp.net","eune.api.pvp.net").gsub("na","eune")
-    when "kr"
-      url.gsub("na.api.pvp.net","kr.api.pvp.net").gsub("na","kr")
-    when "las"
-      url.gsub("na.api.pvp.net","las.api.pvp.net").gsub("na","las")
-    when "lan"
-      url.gsub("na.api.pvp.net","lan.api.pvp.net").gsub("na","lan")
-    when "oce"
-      url.gsub("na.api.pvp.net","oce.api.pvp.net").gsub("na","oce")
-    when "tr"
-      url.gsub("na.api.pvp.net","tr.api.pvp.net").gsub("na","tr")
-    when "ru"
-      url.gsub("na.api.pvp.net","ru.api.pvp.net").gsub("na","ru")
-    else
-      url #Cause USA #1
-    end
+    return url if region == "na"
+
+    return url.gsub("na.api.pvp.net", "#{region}.api.pvp.net").gsub("na", region)
   end
 
   #Display all available Requests for all API classes
   def available_requests
-    c = self.constants
     requests = {}
-
     requests[LeagueApi] = self.instance_methods.map &:to_s
 
-    c.each do |i|
+    self.constants.each do |i|
       requests[eval(i.to_s)] = eval(i.to_s).requests
     end
 
@@ -133,6 +101,20 @@ module LeagueApi
   # Return the Time for the last played game
   def get_time_of_last_game(id, region=nil)
     Time.at( Game.recent_games(id, region).first["createDate"] / 1000 )
+  end
+
+  private
+
+  def add_query_string(params)
+    query_string = ""
+    if params
+      params.each do |p|
+        query_string << "?"+p[0]+"="+p[1]
+      end
+      query_string << "&api_key=" + @api_key
+    else
+      query_string << "?api_key=" + @api_key
+    end
   end
 
 end
