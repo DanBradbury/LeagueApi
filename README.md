@@ -18,12 +18,12 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 > [BR, EUNE, EUW, KR, LAN, LAS, NA, OCE, RU, TR]
 
 * champion-v1.2
-** /champion                                         Retrieve all champions
-** /champion/{id}                                    Retreive champion by ID
+  * /champion                                         Retrieve all champions
+  * /champion/{id}                                    Retreive champion by ID
 * current-game-v1.0
-** /getSpectatorGameInfo/{platformId}/{summonerId}   Get current game information for given summoner ID
+  * /getSpectatorGameInfo/{platformId}/{summonerId}   Get current game information for given summoner ID
 * feature-games-v1.0
-** /featured                                         Get list of featured games.
+  * /featured                                         Get list of featured games.
 * game-v1.3
 * league-v2.5
 * lol-static-data-v1.2
