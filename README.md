@@ -18,8 +18,10 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 > [BR, EUNE, EUW, KR, LAN, LAS, NA, OCE, RU, TR]
 
 * champion-v1.2
-  * /champion                                         Retrieve all champions
-  * /champion/{id}                                    Retreive champion by ID
+  |             |             |
+  |-------------|-------------|
+  | /champion/ | Retrieve all champions |
+  | /champion/{id} | Retrieve champion by ID |
 * current-game-v1.0
   * /getSpectatorGameInfo/{platformId}/{summonerId}   Get current game information for given summoner ID
 * feature-games-v1.0
