@@ -11,7 +11,7 @@ describe LeagueApi::Summoner do
 		@summoner.find_by_name('hellaninja')["name"].should == "Hellaninja" #this guys a noob
 		@summoner.find_by_name('Pablô', "euw")["id"].should == 31821331
 		@summoner.find_by_name('Sayó', "eune")["id"].should == 21749000
-		@summoner.find_by_name('Friend', "tr")["id"].should == 870193
+		@summoner.find_by_name('summoner', "tr")["id"].should == 2020594
 		@summoner.find_by_name('Sara', "oce")["id"].should == 444198
 		@summoner.find_by_name('Chingon', "las")["id"].should == 553880
 		@summoner.find_by_name('ChingoN', "lan")["id"].should == 199926

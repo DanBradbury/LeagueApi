@@ -4,8 +4,8 @@ describe LeagueApi::Static do
 
 	before :all do
 		@static = LeagueApi::Static
-    REALM_VERSION = "4.21.5"
-    GAME_VERSION = "4.21.5"
+    REALM_VERSION = "5.5.3"
+    GAME_VERSION = "5.5.3"
   end
 
 	it "should get a recent champion list" do
@@ -29,7 +29,7 @@ describe LeagueApi::Static do
 	end
 
 	it "should get a recent item list" do
-		@static.get_item_list.first.should == ["3725", {"id"=>3725, "name"=>"Enchantment: Juggernaut", "group"=>"JungleItems", "description"=>"<stats>+500 Health<br>+10% Cooldown Reduction</stats><br><br><unique>UNIQUE Passive - Tenacity:</unique> Reduces the duration of stuns, slows, taunts, fears, silences, blinds, polymorphs, and immobilizes by 35%.<br><br><i>(Unique Passives with the same name don't stack.)</i>"}]
+		@static.get_item_list.first.should == ["3725", {"id"=>3725, "name"=>"Enchantment: Cinderhulk", "group"=>"JungleItems", "description"=>"<stats>+350 Health<br>+25% Bonus Health</stats><br><br><unique>UNIQUE Passive - Immolate:</unique> While in combat, deals 16 (+1 per champion level) magic damage a second to nearby enemies. This increases up to 24 (+1.5 per champion level) magic damage a second based on time in combat. "}]
 	end
 
 	it "should get an item by id" do

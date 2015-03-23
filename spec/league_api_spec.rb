@@ -10,7 +10,7 @@ describe LeagueApi do
 	end
 
 	it "should return a list of Items" do
-		LeagueApi.get_item_names.first.should == "Enchantment: Juggernaut"
+		LeagueApi.get_item_names.first.should == "Enchantment: Cinderhulk"
 	end
 
 	it "should fetch a summoners id from the summoner name" do

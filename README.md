@@ -14,6 +14,26 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
     => true
     # Time to play experiment :D
 
+### Supported API Operations
+> [BR, EUNE, EUW, KR, LAN, LAS, NA, OCE, RU, TR]
+
+* champion-v1.2
+** /champion                                         Retrieve all champions
+** /champion/{id}                                    Retreive champion by ID
+* current-game-v1.0
+** /getSpectatorGameInfo/{platformId}/{summonerId}   Get current game information for given summoner ID
+* feature-games-v1.0
+** /featured                                         Get list of featured games.
+* game-v1.3
+* league-v2.5
+* lol-static-data-v1.2
+* lol-status-v1.0
+* match-v2.2
+* matchhistory-v2.2
+* stats-v1.3
+* summoner-v1.4
+* team-v2.4
+
 #### First Steps
     LeagueApi.available_requests # I prefer to use pry for this because of the hash pretty hash formatting
     =>
