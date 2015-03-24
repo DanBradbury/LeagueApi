@@ -8,6 +8,8 @@ require 'league_api/league'
 require 'league_api/team'
 require 'league_api/stats'
 require 'league_api/util'
+require 'league_api/featured_games'
+require 'league_api/current_game'
 
 module LeagueApi
   extend self

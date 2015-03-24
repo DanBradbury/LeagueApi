@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://danbradbury.github.io/LeagueApi/"
   spec.license       = "MIT"
 
-  spec.files         = ["lib/league_api.rb", "lib/league_api/champion.rb", "lib/league_api/static.rb", "lib/league_api/game.rb", "lib/league_api/summoner.rb", "lib/league_api/league.rb", "lib/league_api/team.rb", "lib/league_api/stats.rb", "lib/league_api/util.rb"]
+  spec.files         = ["lib/league_api.rb", "lib/league_api/champion.rb", "lib/league_api/static.rb", "lib/league_api/game.rb", "lib/league_api/summoner.rb", "lib/league_api/league.rb", "lib/league_api/team.rb", "lib/league_api/stats.rb", "lib/league_api/util.rb", "lib/league_api/current_game.rb", "lib/league_api/featued_games.rb"]
   spec.executables   = []
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

@@ -4,7 +4,7 @@ module LeagueApi
     @base_url = "https://na.api.pvp.net/api/lol/na/v1.2/"
 
     def self.make_request(str, params=nil, region=nil)
-      LeagueApi.make_request(@base_url, str,params, region)
+      LeagueApi.make_request(@base_url, str, params, region)
     end
 
     def self.get_free_champs(region=nil)
