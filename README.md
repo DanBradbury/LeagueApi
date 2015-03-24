@@ -93,9 +93,6 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 | /api/lol/{region}/v2.4/team/by-summoner/{summonerIds} | Get teams mapped by summoner ID for a given list of summoner IDs. |
 | /api/lol/{region}/v2.4/team/{teamIds} | Get teams mapped by team ID for a given list of team IDs. |
 
-### Currently Unsupported API Operations
-> Will be updated until all APIs are fully supported
-
 * current-game-v1.0
 
 |             |             |
@@ -107,6 +104,9 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 |             |             |
 |-------------|-------------|
 | /observer-mode/rest/featured | Get list of featured games. |
+
+### Currently Unsupported API Operations
+> Will be updated until all APIs are fully supported
 
 * lol-status-v1.0
 
