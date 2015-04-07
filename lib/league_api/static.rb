@@ -75,15 +75,15 @@ module LeagueApi
     #TODO: Implement http://ddragon.leagueoflegends.com/cdn/4.7.8/img/sprite/rune0.png
 
     def self.get_item_image(id)
-      "http://ddragon.leagueoflegends.com/cdn/"+$version+"/img/item/"+id.to_s+".png"
+      "http://ddragon.leagueoflegends.com/cdn/"+$DDRAGON_VERSION+"/img/item/"+id.to_s+".png"
     end
 
     def self.get_champion_image(str)
-      "http://ddragon.leagueoflegends.com/cdn/"+$version+"/img/champion/"+str+".png"
+      "http://ddragon.leagueoflegends.com/cdn/"+$DDRAGON_VERSION+"/img/champion/"+str+".png"
     end
 
     def self.get_summoner_image(id)
-      "http://ddragon.leagueoflegends.com/cdn/"+$version+"/img/sprite/spell"+id.to_s+".png"
+      "http://ddragon.leagueoflegends.com/cdn/"+$DDRAGON_VERSION+"/img/sprite/spell"+id.to_s+".png"
     end
 
     def self.requests

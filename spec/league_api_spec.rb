@@ -1,6 +1,12 @@
 require 'spec_helper'
 
 describe LeagueApi do
+  it "should fail if no LOL_KEY is present" do
+    key=ENV.delete("LOL_KEY")
+    expect { LeagueApi.make_request("") }.to raise_error(StandardError, "Must provide an LOL KEY")
+    ENV["LOL_KEY"] = key
+  end
+
 	it "should gather all available requests for the gem" do
 		LeagueApi.available_requests.keys.should == [LeagueApi, LeagueApi::Champion, LeagueApi::Static, LeagueApi::Game, LeagueApi::Summoner, LeagueApi::League, LeagueApi::Team, LeagueApi::Stats, LeagueApi::Util, LeagueApi::FeaturedGames, LeagueApi::CurrentGame]
 	end
@@ -30,5 +36,4 @@ describe LeagueApi do
 	it "should return the time when the last game was played" do
 		LeagueApi.get_time_of_last_game(25087996).class.should == Time
 	end
-
 end

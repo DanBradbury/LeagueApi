@@ -4,8 +4,8 @@ describe LeagueApi::Static do
 
 	before :all do
 		@static = LeagueApi::Static
-    REALM_VERSION = "5.5.3"
-    GAME_VERSION = "5.5.3"
+    REALM_VERSION = "5.6.2"
+    GAME_VERSION = "5.7.2"
   end
 
 	it "should get a recent champion list" do

@@ -3,7 +3,6 @@ require 'spec_helper'
 describe LeagueApi::Champion do
   before :all do
     CHAMP_NUM = 124 #As of Patch 4.21.5
-		LeagueApi.set_region "na"
   end
 	it 'should return correct champion list' do
 		list = LeagueApi::Champion.get_list
