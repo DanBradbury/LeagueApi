@@ -130,7 +130,7 @@ league_api is meant to provide a simple solution for anyone looking to use Riot'
 
 ####Battle Testing On
 
-> [DoTheyWard.com](www.dotheyward.com)
+> [DoTheyWard.com](http://www.dotheyward.com)
 
 ## Contributing
 
