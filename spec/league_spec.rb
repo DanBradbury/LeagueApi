@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe LeagueApi::League do
+  context "Riot API Spec" do
+  end
   #TODO: replace with a reliable test (if player goes inactive this test will fail)
 	#it "should return leagues + entrys given a valid summonerid" do
 		#LeagueApi::League.by_summoner(25087996).should_not == nil

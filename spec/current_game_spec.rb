@@ -25,7 +25,20 @@ describe LeagueApi::CurrentGame do
       games = LeagueApi::FeaturedGames.fetch(region)
       summoner = LeagueApi::Summoner.find_by_name(games["gameList"].first["participants"].first["summonerName"], region)
       @summoner_id = summoner["id"]
-      LeagueApi::CurrentGame.fetch(platformId, @summoner_id, region).should_not == nil
+      @current_game = LeagueApi::CurrentGame.get_spectator_game_info(platformId, @summoner_id, region)
+      @current_game.class.should == CurrentGameInfo
+      @current_game.gameId.should_not == nil
+      @current_game.bannedChampions.class.should == Array
+      @current_game.bannedChampions.first.class.should == BannedChampion
+      @current_game.participants.class.should == Array
+      participant = @current_game.participants.first
+      participant.class.should == CurrentGameParticipant
+      # test CurrentGameParticipant model here..
+      participant.masteries.class.should == Array
+      participant.masteries.first.class.should == Mastery
+      participant.runes.class.should == Array
+      participant.runes.first.class.should == Rune
+      @current_game.observers.class.should == Observer
     end
   end
 end
