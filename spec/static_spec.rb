@@ -4,8 +4,8 @@ describe LeagueApi::Static do
 
 	before :all do
 		@static = LeagueApi::Static
-    REALM_VERSION = "5.6.2"
-    GAME_VERSION = "5.7.2"
+    REALM_VERSION = "5.13.1"
+    GAME_VERSION = "5.13.1"
   end
 
 	it "should get a recent champion list" do
@@ -28,25 +28,26 @@ describe LeagueApi::Static do
 		@static.get_champion_by_id(266).should == {"id"=>266, "key"=>"Aatrox", "name"=>"Aatrox", "title"=>"the Darkin Blade"}
 	end
 
-	it "should get a recent item list" do
-		@static.get_item_list.first.should == ["3725", {"id"=>3725, "name"=>"Enchantment: Cinderhulk", "group"=>"JungleItems", "description"=>"<stats>+350 Health<br>+25% Bonus Health</stats><br><br><unique>UNIQUE Passive - Immolate:</unique> While in combat, deals 16 (+1 per champion level) magic damage a second to nearby enemies. This increases up to 24 (+1.5 per champion level) magic damage a second based on time in combat. "}]
-	end
+  # Fragile test.. will fail when balance changes are made
+  it "should get a list of updated masteries" do
+    @static.get_mastery_list.first.should == ["4353", {"id"=>4353, "name"=>"Intelligence", "description"=> ["+2% Cooldown Reduction and reduces the cooldown of Activated Items by 8%",
+  "+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 14%",
+  "+5% Cooldown Reduction and reduces the cooldown of Activated Items by 20%"]}]
+  end
+
+  it "should get a specific mastery by id" do
+    @static.get_mastery_by_id(4353).should == {"id"=>4353, "name"=>"Intelligence", "description"=> ["+2% Cooldown Reduction and reduces the cooldown of Activated Items by 8%",
+  "+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 14%",
+  "+5% Cooldown Reduction and reduces the cooldown of Activated Items by 20%"]}
+  end
 
 	it "should get an item by id" do
 		@static.get_item_by_id(2009).should == {"id"=>2009, "name"=>"Total Biscuit of Rejuvenation", "description"=>"<consumable>Click to Consume:</consumable> Restores 80 Health and 50 Mana over 10 seconds."}
 	end
 
-	it "should get a list of updated masteries" do
-		@static.get_mastery_list.first.should == ["4353", {"id"=>4353, "name"=>"Intelligence", "description"=> ["+2% Cooldown Reduction and reduces the cooldown of Activated Items by 4%",
-	"+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 7%",
-	"+5% Cooldown Reduction and reduces the cooldown of Activated Items by 10%"]}]
-	end
-
-	it "should get a specific mastery by id" do
-		@static.get_mastery_by_id(4353).should == {"id"=>4353, "name"=>"Intelligence", "description"=> ["+2% Cooldown Reduction and reduces the cooldown of Activated Items by 4%",
-	"+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 7%",
-	"+5% Cooldown Reduction and reduces the cooldown of Activated Items by 10%"]}
-	end
+  it "should get a recent item list" do
+    @static.get_item_list.first.should == ["3725", {"id"=>3725, "name"=>"Enchantment: Cinderhulk", "group"=>"JungleItems", "description"=>"<stats>+300 Health<br>+25% Bonus Health</stats><br><br><unique>UNIQUE Passive - Immolate:</unique> Deals 15 (+0.6 per champion level) magic damage a second to nearby enemies. Deals 100% bonus damage to monsters. "}]
+  end
 
 	it "should get current realm information" do
 		@static.get_realm["v"].should == REALM_VERSION

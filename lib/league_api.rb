@@ -15,7 +15,7 @@ module LeagueApi
   @api_key = ENV["LOL_KEY"]
   @default_region = "na"
   # third party versioning for image cdn (static info)
-  $DDRAGON_VERSION = "5.6.2"
+  $DDRAGON_VERSION = "5.13.1"
 
   extend self
 
