@@ -8,7 +8,8 @@ class GameDto < CommonDto
 
   private
   def create_fellow_players(array)
-    @fellowPlayers = array.map { |hash| PlayerDto.new(hash) }
+    # possible to have a game against AI where there will be no fellow players
+    @fellowPlayers = array.nil? ? [] : array.map { |hash| PlayerDto.new(hash) }
   end
 
   def create_raw_stats(hash)

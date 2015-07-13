@@ -76,5 +76,5 @@ class RawStatsDto < CommonDto
     :visionWardsBought,
     :wardKilled,
     :wardPlaced,
-    :win 
+    :win
 end

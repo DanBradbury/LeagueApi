@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe LeagueApi::Champion do
   before :all do
-    CHAMP_NUM = 125 #Not sure when this happened..
+    CHAMP_NUM = 126
   end
 
   context 'Riot API Champion Spec' do

@@ -1,5 +1,6 @@
 require 'rspec'
 require 'league_api'
+require 'pry'
 
 RSpec.configure do |config|
   config.order = 'random'

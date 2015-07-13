@@ -1,10 +1,13 @@
-# LeagueApi
+LeagueApi
+==========
 
-[![Build Status](https://travis-ci.org/DanBradbury/LeagueApi.svg?branch=master)](https://travis-ci.org/DanBradbury/LeagueApi)  [![Code Climate](https://codeclimate.com/github/DanBradbury/LeagueApi.png)](https://codeclimate.com/github/DanBradbury/LeagueApi) [![Gem Version](https://badge.fury.io/rb/league_api.svg)](http://badge.fury.io/rb/league_api) [![Inline docs](http://inch-ci.org/github/DanBradbury/LeagueApi.png?branch=master)](http://inch-ci.org/github/DanBradbury/LeagueApi)
+Version 0.6.2
 
-league_api is meant to provide a simple solution for anyone looking to use Riot's Developer APIs in a Ruby application. All Riot Endpoints are supported exactly as stated on the Riot Developer API website.
+[![Build Status](https://travis-ci.org/DanBradbury/LeagueApi.svg?branch=master)](https://travis-ci.org/DanBradbury/LeagueApi)  [![Code Climate](https://codeclimate.com/github/DanBradbury/LeagueApi.png)](https://codeclimate.com/github/DanBradbury/LeagueApi)
 
-## Installation & Getting Started
+LeaugeApi is a League Api wrapper written for Rubyists. The goal is to create a headache-free solution for apps that rely on the League of Legends API.
+Install
+-------
 
     #in your shell
     gem install league_api

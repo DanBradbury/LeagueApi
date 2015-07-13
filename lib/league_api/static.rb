@@ -1,8 +1,14 @@
 module LeagueApi
 
+  #lol-static-data-v1.2
   class Static
     @base_url = "https://na.api.pvp.net/api/lol/static-data/na/v1.2/"
     class << self
+      # Riot API Spec Start
+      def champions(region=nil)
+        ChampionListDto.new(make_request('champion', region))
+      end
+      # Riot API Spec End
       def make_request(str, region=nil)
         LeagueApi.make_request(@base_url, str, nil, region)
       end

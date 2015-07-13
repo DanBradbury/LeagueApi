@@ -11,9 +11,9 @@ require 'league_api/util'
 require 'league_api/featured_games'
 require 'league_api/current_game'
 
-require 'league_api/dto/champion_list_dto'
-require 'league_api/dto/champion_dto'
 require 'league_api/dto/common_dto'
+require 'league_api/dto/champion_dto'
+require 'league_api/dto/champion_list_dto'
 require 'league_api/dto/game_info'
 require 'league_api/dto/current_game_info'
 require 'league_api/dto/featured_games_dto'
@@ -33,7 +33,7 @@ module LeagueApi
   @api_key = ENV["LOL_KEY"]
   @default_region = "na"
   # third party versioning for image cdn (static info)
-  $DDRAGON_VERSION = "5.11.1"
+  $DDRAGON_VERSION = "5.12.1"
 
   extend self
 

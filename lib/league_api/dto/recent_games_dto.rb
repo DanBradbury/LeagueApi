@@ -1,6 +1,9 @@
 class RecentGamesDto < CommonDto
   attr_accessor :games, :summonerId
   def initialize(hash)
+    #puts hash.inspect
+    #puts "="*100
+    #puts hash["games"].inspect
     create_games(hash.delete("games"))
     super(hash)
   end
