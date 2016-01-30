@@ -8,7 +8,7 @@ module LeagueApi
   @test_counter = 0
   def make_request(base, modifier=nil, params=nil, region=nil)
     @test_counter+=1
-    if(@test_counter%5==0)
+    if(@test_counter%4==0)
       sleep(3)
     end
 
