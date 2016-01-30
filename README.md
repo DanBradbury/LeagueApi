@@ -5,13 +5,13 @@ Version 0.9.0
 
 [![Build Status](https://travis-ci.org/DanBradbury/LeagueApi.svg?branch=master)](https://travis-ci.org/DanBradbury/LeagueApi)  [![Code Climate](https://codeclimate.com/github/DanBradbury/LeagueApi.png)](https://codeclimate.com/github/DanBradbury/LeagueApi)
 
-LeaugeApi is a League Api wrapper written for Rubyists. The goal is to create a headache-free solution for apps that rely on the League of Legends API.
+So you have a Riot Developer API key and are a Ruby developer that would like to get started with minimal headache. LeagueApi is built with you in mind and to make interactions as painless as possible.
 
 Install
 -------
 
     gem install league_api
-    export LOL_KEY="your-key-here" #ideally just add this to your ~/.bashrc
+    export LOL_KEY="your-key-here" #makes it easy to use a different key in production vs development
 
 Quick Example
 ------
@@ -31,5 +31,5 @@ Quick Example
 
 ## Contributing
 
-If you find any issues and would like to submit a PR I'd love to get it merged in and make the gem better.
+If you find any issues or have ideas for improvement please submit a PR and I'd love to get it merged in and make the gem better.
 
