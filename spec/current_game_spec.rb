@@ -26,6 +26,7 @@ describe LeagueApi::CurrentGame do
       summoner = LeagueApi::Summoner.find_by_name(games["gameList"].first["participants"].first["summonerName"], region)
       @summoner_id = summoner["id"]
       LeagueApi::CurrentGame.fetch(platformId, @summoner_id, region).should_not == nil
+      sleep(1) #add this to ensure we dont break any limits
     end
   end
 end

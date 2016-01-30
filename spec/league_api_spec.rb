@@ -1,32 +1,32 @@
 require 'spec_helper'
 
 describe LeagueApi do
-  it "should fail if no LOL_KEY is present" do
-    key=ENV.delete("LOL_KEY")
-    expect { LeagueApi.make_request("") }.to raise_error(StandardError, "Must provide an LOL KEY")
-    ENV["LOL_KEY"] = key
-  end
-
-	it "should gather all available requests for the gem" do
-		LeagueApi.available_requests.keys.should == [LeagueApi, LeagueApi::Champion, LeagueApi::Static, LeagueApi::Game, LeagueApi::Summoner, LeagueApi::League, LeagueApi::Team, LeagueApi::Stats, LeagueApi::Util, LeagueApi::FeaturedGames, LeagueApi::CurrentGame]
+	it "available requests should contain top level object" do
+    available_requests = LeagueApi.available_requests.keys
+		expect(available_requests.include?(LeagueApi)).to be_truthy
+		expect(available_requests.include?(LeagueApi::Champion)).to be_truthy
 	end
 
 	it "should return a list of Champions" do
-		LeagueApi.get_champion_names.first.should == "Thresh"
+    champions = LeagueApi.get_champion_names
+		expect(champions.include?("Thresh")).to be_truthy
+		expect(champions.include?("BigBoy")).to be_falsey
 	end
 
 	it "should return a list of Items" do
-		LeagueApi.get_item_names.first.should == "Enchantment: Cinderhulk"
+    items = LeagueApi.get_item_names
+		expect(items.include?("Enchantment: Cinderhulk")).to be_truthy
+		expect(items.include?("Bulshit mcEnchant")).to be_falsey
 	end
 
-	it "should fetch a summoners id from the summoner name" do
+	it "should fetch a myself and get the summoner_id" do
 		LeagueApi.get_summoner_id("iSixPool").should == 25087996
-    #TODO: remove this line when full region testing has been added
-		#LeagueApi.get_summoner_id("Pablô", "euw").should == 31821331
 	end
 
 	it "should get the last played game from summoner id" do
-		LeagueApi.get_last_game_played(25087996).keys.should == ["gameId", "invalid", "gameMode", "gameType", "subType", "mapId", "teamId", "championId", "spell1", "spell2", "level", "ipEarned", "createDate", "fellowPlayers", "stats"]
+    last_game_keys = LeagueApi.get_last_game_played(25087996).keys
+		expect(last_game_keys.include?("gameMode")).to be_truthy
+		expect(last_game_keys.include?("gameType")).to be_truthy
 	end
 
 	it "should return the champion played in the last game" do

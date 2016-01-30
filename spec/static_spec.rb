@@ -4,12 +4,12 @@ describe LeagueApi::Static do
 
 	before :all do
 		@static = LeagueApi::Static
-    REALM_VERSION = "5.13.1"
-    GAME_VERSION = "5.13.1"
+    REALM_VERSION = "6.2.1"
+    GAME_VERSION = "6.2.1"
   end
 
 	it "should get a recent champion list" do
-		@static.get_champion_list.first.should == ["Thresh", {"id"=>412, "key"=>"Thresh", "name"=>"Thresh", "title"=>"the Chain Warden"}]
+		expect(@static.get_champion_list.keys.include?("Thresh")).to be_truthy
 	end
 
 	it "should return an inverted champion list with ids as the keys" do
@@ -28,44 +28,41 @@ describe LeagueApi::Static do
 		@static.get_champion_by_id(266).should == {"id"=>266, "key"=>"Aatrox", "name"=>"Aatrox", "title"=>"the Darkin Blade"}
 	end
 
-  # Fragile test.. will fail when balance changes are made
-  it "should get a list of updated masteries" do
-    @static.get_mastery_list.first.should == ["4353", {"id"=>4353, "name"=>"Intelligence", "description"=> ["+2% Cooldown Reduction and reduces the cooldown of Activated Items by 8%",
-  "+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 14%",
-  "+5% Cooldown Reduction and reduces the cooldown of Activated Items by 20%"]}]
+  describe "masteries" do
+    it "should get a list of masters and then fetch the individual" do
+			fetch_id = @static.get_mastery_list.keys.first
+			expect(@static.get_mastery_by_id(fetch_id).keys.include?("name")).to be_truthy
+    end
   end
 
-  it "should get a specific mastery by id" do
-    @static.get_mastery_by_id(4353).should == {"id"=>4353, "name"=>"Intelligence", "description"=> ["+2% Cooldown Reduction and reduces the cooldown of Activated Items by 8%",
-  "+3.5% Cooldown Reduction and reduces the cooldown of Activated Items by 14%",
-  "+5% Cooldown Reduction and reduces the cooldown of Activated Items by 20%"]}
+  describe "items" do
+    it "should get a list of items and an indivual from the list" do
+			fetch_id = @static.get_item_list.keys.first
+      expect(@static.get_item_by_id(fetch_id).keys.include?("group")).to be_truthy
+    end
   end
 
-	it "should get an item by id" do
-		@static.get_item_by_id(2009).should == {"id"=>2009, "name"=>"Total Biscuit of Rejuvenation", "description"=>"<consumable>Click to Consume:</consumable> Restores 80 Health and 50 Mana over 10 seconds."}
+  describe "runes" do
+    it "should fetch list and get individual" do
+			fetch_id = @static.get_rune_list.keys.first
+      expect(@static.get_rune_by_id(fetch_id).keys.include?("description")).to be_truthy
+    end
+  end
+
+  describe "summoner spells" do
+		it "should fetch list and get individual" do
+			fetch_id = @static.get_summoner_spells.first[1]["id"] #weird syntax compared to the others (id not in front..)
+			expect(@static.get_summoner_by_id(fetch_id).keys.include?("name")).to be_truthy
+    end
 	end
-
-  it "should get a recent item list" do
-    @static.get_item_list.first.should == ["3725", {"id"=>3725, "name"=>"Enchantment: Cinderhulk", "group"=>"JungleItems", "description"=>"<stats>+300 Health<br>+25% Bonus Health</stats><br><br><unique>UNIQUE Passive - Immolate:</unique> Deals 15 (+0.6 per champion level) magic damage a second to nearby enemies. Deals 100% bonus damage to monsters. "}]
-  end
 
 	it "should get current realm information" do
-		@static.get_realm["v"].should == REALM_VERSION
-		@static.get_realm["l"].should == "en_US"
-		@static.get_realm["cdn"].should == "http://ddragon.leagueoflegends.com/cdn"
+		realm_info = @static.get_realm
+    realm_info["v"].should == REALM_VERSION
+		realm_info["l"].should == "en_US"
+		realm_info["cdn"].should == "http://ddragon.leagueoflegends.com/cdn"
 	end
 
-	it "should get current rune list" do
-		@static.get_rune_list.first.should == ["5235", {"id"=>5235, "name"=>"Quintessence of Ability Power", "description"=>"+3.85 ability power", "rune"=>{"isRune"=>true, "tier"=>"2", "type"=>"black"}}]
-	end
-
-	it "should get runes by id" do
-		@static.get_rune_by_id(5235).should == {"id"=>5235, "name"=>"Quintessence of Ability Power", "description"=>"+3.85 ability power", "rune"=>{"isRune"=>true, "tier"=>"2", "type"=>"black"}}
-	end
-
-	it "should get current summoner spells" do
-		@static.get_summoner_spells.first.should == ["SummonerBoost", {"name"=>"Cleanse", "description"=> "Removes all disables and summoner spell debuffs affecting your champion and lowers the duration of incoming disables by 65% for 3 seconds.", "summonerLevel"=>6, "id"=>1, "key"=>"SummonerBoost"}]
-	end
 
 	it "should get summoner spell by id" do
 		@static.get_summoner_by_id(1)["name"].should == "Cleanse"

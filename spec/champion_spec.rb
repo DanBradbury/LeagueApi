@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe LeagueApi::Champion do
   before :all do
-    CHAMP_NUM = 126 #Welcome Tahm Kench, the River King
+    CHAMP_NUM = 129 # Been a while since i've logged in so im not sure who the latest champ is now..
   end
 	it 'should return correct champion list' do
 		list = LeagueApi::Champion.get_list

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe LeagueApi::Util do
   before(:all) do
     @util = LeagueApi::Util
-    @last_game = LeagueApi.get_last_game_played("25087996")
+    @last_game ||= LeagueApi.get_last_game_played("25087996")
   end
 
 
