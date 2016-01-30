@@ -1,7 +1,7 @@
 LeagueApi
 ==========
 
-Version 0.8.1
+Version 0.9.0
 
 [![Build Status](https://travis-ci.org/DanBradbury/LeagueApi.svg?branch=master)](https://travis-ci.org/DanBradbury/LeagueApi)  [![Code Climate](https://codeclimate.com/github/DanBradbury/LeagueApi.png)](https://codeclimate.com/github/DanBradbury/LeagueApi)
 
