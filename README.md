@@ -27,7 +27,7 @@ Quick Example
 
 ####Battle Testing On
 
-> [DoTheyWard.com](www.dotheyward.com)
+> [DoTheyWard.com](http://www.dotheyward.com)
 
 ## Contributing
 
