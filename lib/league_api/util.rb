@@ -2,6 +2,11 @@ module LeagueApi
 
 	class Util
 
+    # Return all publically available requests
+    def self.requests
+      %w( organize_players(player_list) get_game_stats(game_stats_hash) )
+    end
+
     # Takes fellow_player hash from game info and splits into team 1 and team 2 (prepend lookup team1)
     def self.organize_players(players)
       players.sort! { |x,y| x["teamId"] <=> y["teamId"]}
@@ -47,10 +52,8 @@ module LeagueApi
       s
     end
 
-    def self.requests
-      %w( organize_players(player_list) get_game_stats(game_stats_hash) )
-    end
-
+    # fetches list of items from game["stats"]
+    # TODO: should be removed / refactored out since this would only be used by get_item_list
     def self.get_raw_item_list(stats)
       item_list =  []
 
@@ -61,6 +64,8 @@ module LeagueApi
       item_list
     end
 
+    # Similar to get_raw_item_list but gets the item name from Static data
+    # Mostly convenient for getting item names quickly on recent_games
     def self.get_item_list(stats)
       raw_list = get_raw_item_list(stats)
       item_list = []
